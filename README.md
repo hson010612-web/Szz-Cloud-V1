@@ -24,7 +24,7 @@ Dự án được xây dựng và duy trì bởi:
 ---
 
 ## 💬 Liên Hệ & Hỗ Trợ
-* **Discord Server:** [Szz Cloud Community](https://discord.gg/QBWW7Jms6F)
+* **Community:** [D4F Community](https://discord.gg/QBWW7Jms6F)
 * **Discord ID:** `sonw0106` | `ph.linh.dev0109`
 
 ---
@@ -41,6 +41,7 @@ clear
 # --- THÔNG TIN DỰ ÁN ---
 OWNER1="sonw0106"
 OWNER2="ph.linh.dev0109"
+SERVER_NAME="D4F Community"
 DISCORD_SV="[https://discord.gg/QBWW7Jms6F](https://discord.gg/QBWW7Jms6F)"
 
 # --- MÀU SẮC ---
@@ -62,7 +63,8 @@ echo "  ╚══════╝╚══════╝╚══════╝
 echo -e "                   PREMIUM CLOUD OS - WINDOWS STYLE${NC}"
 echo "------------------------------------------------------------------------"
 echo -e "${WHITE}  OWNERS:${NC} ${YELLOW}$OWNER1${NC} & ${YELLOW}$OWNER2${NC}"
-echo -e "${WHITE}  DISCORD:${NC} ${GREEN}$DISCORD_SV${NC}"
+echo -e "${WHITE}  SERVER:${NC} ${GREEN}$SERVER_NAME${NC}"
+echo -e "${WHITE}  DISCORD:${NC} ${CYAN}$DISCORD_SV${NC}"
 echo "------------------------------------------------------------------------"
 
 echo -e "${CYAN}[*]${NC} Đang khởi tạo Szz Cloud VPS..."
