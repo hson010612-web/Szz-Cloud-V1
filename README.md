@@ -1,6 +1,3 @@
-# Szz-Cloud-V1
-🚀 Szz Cloud: Giải pháp máy ảo Ubuntu Desktop &amp; Windows Style tối ưu trên GitHub Codespaces. Phát triển bởi sonw0106 &amp; ph.linh.dev0109. ⚡ Discord: https://discord.gg/QBWW7Jms6F
-
 # ☁️ Szz Cloud Project - Virtual Environment
 
 <p align="center">
@@ -19,17 +16,74 @@ Dự án được xây dựng và duy trì bởi:
 ---
 
 ## 🚀 Tính Năng Nổi Bật
-- **Ubuntu Desktop Pro:** Môi trường Linux đầy đủ, cực kỳ ổn định và bảo mật.
-- **Windows UI Style:** Giao diện được thiết kế theo phong cách Windows cho trải nghiệm quen thuộc.
-- **High Performance:** Tối ưu hóa CPU và RAM từ hạ tầng máy chủ GitHub.
-- **Web-Based Access:** Truy cập trực tiếp qua trình duyệt mà không cần cài đặt phần mềm bên thứ ba.
-- **Fast Connection:** Tận dụng băng thông mạng tốc độ cao (1Gbps+).
+- **Ubuntu Desktop Pro:** Môi trường Linux đầy đủ, cực kỳ ổn định.
+- **Windows UI Style:** Giao diện được thiết kế theo phong cách Windows 11 quen thuộc.
+- **High Performance:** Tối ưu hóa 2GB Shared Memory giúp lướt web mượt mà.
+- **Security:** Bảo mật và an toàn trên hạ tầng GitHub.
 
 ---
 
-## 🛠️ Hướng Dẫn Sử Dụng
-Để sử dụng **Szz Cloud**, bạn chỉ cần mở Terminal trong Codespaces và chạy script tương ứng:
+## 💬 Liên Hệ & Hỗ Trợ
+* **Discord Server:** [Szz Cloud Community](https://discord.gg/QBWW7Jms6F)
+* **Discord ID:** `sonw0106` | `ph.linh.dev0109`
 
-### 🔹 Bản Ubuntu Pro (Giao diện chuẩn)
+---
+
+## 🛠️ Mã Nguồn Cài Đặt (Installation Code)
+
+Bạn chỉ cần copy toàn bộ đoạn code dưới đây, dán vào **Terminal** của GitHub Codespaces và nhấn **Enter**:
+
 ```bash
-bash szz_cloud.sh
+cat << 'EOF' > szz_cloud.sh
+#!/bin/bash
+clear
+
+# --- THÔNG TIN DỰ ÁN ---
+OWNER1="sonw0106"
+OWNER2="ph.linh.dev0109"
+DISCORD_SV="[https://discord.gg/QBWW7Jms6F](https://discord.gg/QBWW7Jms6F)"
+
+# --- MÀU SẮC ---
+CYAN='\033[0;36m'
+GREEN='\033[0;32m'
+PURPLE='\033[0;35m'
+YELLOW='\033[1;33m'
+WHITE='\033[1;37m'
+NC='\033[0m'
+
+# --- LOGO KHỞI ĐỘNG ---
+echo -e "${CYAN}"
+echo "  ███████╗███████╗███████╗     ██████╗██╗      ██████╗ ██╗   ██╗██████╗ "
+echo "  ██╔════╝██╔════╝╚══███╔╝    ██╔════╝██║     ██╔═══██╗██║   ██║██╔══██╗"
+echo "  ███████╗█████╗    ███╔╝     ██║     ██║     ██║   ██║██║   ██║██║  ██║"
+echo "  ╚════██║██╔══╝   ███╔╝      ██║     ██║     ██║   ██║██║   ██║██║  ██║"
+echo "  ███████║███████╗███████╗    ╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝"
+echo "  ╚══════╝╚══════╝╚══════╝     ╚═════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝ "
+echo -e "                   PREMIUM CLOUD OS - WINDOWS STYLE${NC}"
+echo "------------------------------------------------------------------------"
+echo -e "${WHITE}  OWNERS:${NC} ${YELLOW}$OWNER1${NC} & ${YELLOW}$OWNER2${NC}"
+echo -e "${WHITE}  DISCORD:${NC} ${GREEN}$DISCORD_SV${NC}"
+echo "------------------------------------------------------------------------"
+
+echo -e "${CYAN}[*]${NC} Đang khởi tạo Szz Cloud VPS..."
+sudo apt update -y > /dev/null 2>&1
+sudo apt install docker.io -y > /dev/null 2>&1
+sudo docker rm -f szz_cloud > /dev/null 2>&1
+
+echo -e "${CYAN}[*]${NC} Đang triển khai giao diện Windows Style..."
+sudo docker run -d \
+  --name szz_cloud \
+  -p 6080:3000 \
+  -e TITLE="Szz Cloud - $OWNER1 & $OWNER2" \
+  -e TZ=Asia/Ho_Chi_Minh \
+  --shm-size="2gb" \
+  lscr.io/linuxserver/webtop:ubuntu-xfce
+
+echo "------------------------------------------------------------------------"
+echo -e "${GREEN}✅ KÍCH HOẠT THÀNH CÔNG!${NC}"
+echo -e "🚀 Truy cập: Tab PORTS -> Cổng 6080 -> PUBLIC"
+echo "------------------------------------------------------------------------"
+EOF
+
+chmod +x szz_cloud.sh
+./szz_cloud.sh
